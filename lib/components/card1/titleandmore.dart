@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../constraints.dart';
+import '../../constraints.dart';
+
 
 class MoreRow extends StatelessWidget {
   const MoreRow({

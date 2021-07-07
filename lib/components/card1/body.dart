@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_training/components/recommend_plant.dart';
-import '../constraints.dart';
+import 'package:flutter_training/components/card1/recommend_plant.dart';
+import '../../constraints.dart';
 import 'featured_plant_scroll.dart';
 import 'header.dart';
 import 'titleandmore.dart';

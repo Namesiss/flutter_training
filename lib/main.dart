@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/components/botombar.dart';
-import 'package:flutter_training/components/homescreen.dart';
+import 'package:flutter_training/components/card1/botombar.dart';
+import 'package:flutter_training/components/card1/homescreen.dart';
 import 'package:flutter_training/constraints.dart';
+
+import 'components/card2/card2.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static List<Widget> pages = <Widget>[
     Homescreen(),
-    Container(color: Colors.grey,),
+    Card2(),
     Container(color: Colors.amber,)
   ];
 
