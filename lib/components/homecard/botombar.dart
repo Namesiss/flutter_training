@@ -28,15 +28,14 @@ class BottomBar extends StatelessWidget {
               ),
               label: "1"),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/heart-icon.svg",
-                  color: currentIndex == 1 ? kPrimaryColor : kTextColor
-              ),
-              label: "2"),
+              icon: Icon(Icons.explore),
+              label: "Explore"),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/user-icon.svg",
-                  color: currentIndex == 2 ? kPrimaryColor : kTextColor
-              ),
-              label: "3"),
+              icon: Icon(Icons.book),
+              label: "Recipes"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.list),
+              label: "To Buy"),
         ]);
   }
 }

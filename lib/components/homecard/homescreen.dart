@@ -1,6 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_training/components/card1/body.dart';
+import 'package:flutter_training/components/homecard/body.dart';
 
 import '../../constraints.dart';
 

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/components/card1/botombar.dart';
-import 'package:flutter_training/components/card1/homescreen.dart';
+import 'package:flutter_training/components/homecard/botombar.dart';
+import 'package:flutter_training/components/homecard/homescreen.dart';
 import 'package:flutter_training/components/card2/fooderlich_theme.dart';
 import 'package:flutter_training/components/card3/card3.dart';
-import 'package:flutter_training/constraints.dart';
-
+import 'package:flutter_training/screens/explore_screen.dart';
 import 'components/card2/card2.dart';
 
 void main() {
@@ -38,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static List<Widget> pages = <Widget>[
     Homescreen(),
+    ExploreScreen(),
     Card2(),
     Card3(),
   ];

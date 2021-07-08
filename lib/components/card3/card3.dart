@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_training/components/card2/fooderlich_theme.dart';
+import 'package:flutter_training/models/explore_recipe.dart';
 
 class Card3 extends StatelessWidget {
-  const Card3({Key key}) : super(key: key);
+  final ExploreRecipe recipe;
+  const Card3({Key key, this.recipe}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Card3 extends StatelessWidget {
         constraints: BoxConstraints.expand(height: 450, width: 350),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/image_3.png'),
+                image: AssetImage(recipe.backgroundImage),
                 fit: BoxFit.cover),
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
@@ -33,7 +35,7 @@ class Card3 extends StatelessWidget {
                 children: <Widget>[
                   Icon(Icons.book, color: Colors.white,size: 40,),
                   SizedBox(height: 8,),
-                  Text('Trends', style:
+                  Text(recipe.title, style:
                     FooderlichTheme.darkTextTheme.headline2,),
                   SizedBox(height: 30,)
                 ],
