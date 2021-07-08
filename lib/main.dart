@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/components/card1/botombar.dart';
 import 'package:flutter_training/components/card1/homescreen.dart';
+import 'package:flutter_training/components/card2/fooderlich_theme.dart';
+import 'package:flutter_training/components/card3/card3.dart';
 import 'package:flutter_training/constraints.dart';
 
 import 'components/card2/card2.dart';
@@ -16,12 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primaryColor: kPrimaryColor,
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
-        visualDensity:VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: FooderlichTheme.dark(),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -42,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static List<Widget> pages = <Widget>[
     Homescreen(),
     Card2(),
-    Container(color: Colors.amber,)
+    Card3(),
   ];
 
   void _onItemTapped(int index){

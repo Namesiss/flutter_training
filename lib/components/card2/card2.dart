@@ -14,7 +14,7 @@ class Card2 extends StatelessWidget {
           width: 350,
           height: 450,
         ),
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/image_1.png'),
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/image_1.png'),
         fit: BoxFit.cover),
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
@@ -24,7 +24,7 @@ class Card2 extends StatelessWidget {
             AuthorCard(
               authorName: 'Huynh Huu Loc',
               title: 'Work Harder',
-              imageProvider: AssetImage('assets/image_2.png'),
+              imageProvider: AssetImage('assets/images/image_1.png'),
             ),
             //TODO 4: add Positioned
             Expanded(child: Stack(

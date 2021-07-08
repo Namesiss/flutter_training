@@ -12,17 +12,31 @@ class BottomBar extends StatelessWidget {
   }) : super(key: key);
   final Function tap;
   final int currentIndex;
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      selectedItemColor: kPrimaryColor,
-      currentIndex: currentIndex,
-      onTap: tap,
-      items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/flower.svg"), label: "1"),
-        BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/heart-icon.svg"), label: "2"),
-        BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/user-icon.svg"), label: "3"),
-      ]
-    );
+        selectedItemColor: kPrimaryColor,
+        unselectedItemColor: kTextColor,
+        currentIndex: currentIndex,
+        onTap: tap,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                "assets/icons/flower.svg",
+                color: currentIndex == 0 ? kPrimaryColor : kTextColor,
+              ),
+              label: "1"),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset("assets/icons/heart-icon.svg",
+                  color: currentIndex == 1 ? kPrimaryColor : kTextColor
+              ),
+              label: "2"),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset("assets/icons/user-icon.svg",
+                  color: currentIndex == 2 ? kPrimaryColor : kTextColor
+              ),
+              label: "3"),
+        ]);
   }
 }
