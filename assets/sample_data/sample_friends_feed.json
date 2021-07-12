@@ -2,31 +2,31 @@
     "feed": [
         {
             "profileImageUrl": "assets/profile_pics/person_cesare.jpeg",
-            "comment": "Made this delicious pizza this morning",
+            "comment": "Tôi vừa làm chiếc Pizza này hồi sáng.",
             "foodPictureUrl": "card_carrot.png",
             "timestamp": "10"
         },
         {
             "profileImageUrl": "assets/profile_pics/person_stef.jpeg",
-            "comment": "Made delicious creamy, shrimp black pepper pasta.",
+            "comment": "Vừa xong món mì tôm tiêu đen kem ngon tuyệt. ",
             "foodPictureUrl": "card_carrot.png",
             "timestamp": "80"
         },
         {
             "profileImageUrl": "assets/profile_pics/person_crispy.png",
-            "comment": "Made a delicious salad today!",
+            "comment": "Ăn rau đi!",
             "foodPictureUrl": "card_carrot.png",
             "timestamp": "20"
         },
         {
             "profileImageUrl": "assets/profile_pics/person_joe.jpeg",
-            "comment": "Cooked a widget this morning.",
+            "comment": "Mới nấu một widget sáng nay. ",
             "foodPictureUrl": "card_carrot.png",
             "timestamp": "30"
         },
         {
             "profileImageUrl": "assets/profile_pics/person_katz.jpeg",
-            "comment": "Going to power through my day with this nutty smoothie to finish up Flutter apprentice for our readers!",
+            "comment": "Tiếp thêm sức mạnh cho cả ngày của tôi với món sinh tố hấp dẫn này để hoàn thành khóa học việc làm Flutter cho độc giả của chúng tôi! ",
             "foodPictureUrl": "card_carrot.png",
             "timestamp": "40"
         },
