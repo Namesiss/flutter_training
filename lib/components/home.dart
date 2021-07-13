@@ -4,8 +4,8 @@ import 'package:flutter_training/screens/explore_screen.dart';
 import 'package:flutter_training/screens/grocery_screen.dart';
 import 'package:flutter_training/screens/recipes_screen.dart';
 import 'package:provider/provider.dart';
-import 'homecard/botombar.dart';
-import 'homecard/homescreen.dart';
+import 'botombar.dart';
+import 'homecard/home_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    Homescreen(),
+    HomeScreen(),
     ExploreScreen(),
     RecipesScreen(),
     GroceryScreen(),
