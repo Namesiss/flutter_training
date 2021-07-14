@@ -26,7 +26,7 @@ class BottomBar extends StatelessWidget {
                 "assets/icons/flower.svg",
                 color: currentIndex == 0 ? kPrimaryColor : kTextColor,
               ),
-              label: "1"),
+              label: "SP&Stream"),
           BottomNavigationBarItem(
               icon: Icon(Icons.explore),
               label: "Explore"),
