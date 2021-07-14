@@ -13,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   Future<int> _counter;
+  MyStream myStream = new MyStream();
 
   Future<void> _incrementCounter() async {
     final SharedPreferences prefs = await _prefs;
@@ -20,9 +21,11 @@ class HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       _counter = prefs.setInt("counter", counter).then((bool success) {
+        myStream.increment((counter));
         return counter;
       });
     });
+
   }
 
   @override
@@ -37,23 +40,33 @@ class HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: FutureBuilder<int>(
-              future: _counter,
-              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-                switch (snapshot.connectionState) {
-                  case ConnectionState.waiting:
-                    return const CircularProgressIndicator();
-                  default:
-                    if (snapshot.hasError) {
-                      return Text('Error: ${snapshot.error}');
-                    } else {
-                      return Text(
-                        'Button tapped ${snapshot.data} time${snapshot.data == 1 ? '' : 's'}.\n\n'
-                            'This should persist across restarts.',
-                      );
-                    }
-                }
-              })),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FutureBuilder<int>(
+                future: _counter,
+                builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.waiting:
+                      return const CircularProgressIndicator();
+                    default:
+                      if (snapshot.hasError) {
+                        return Text('Error: ${snapshot.error}');
+                      } else {
+                        return Text(
+                          'Button tapped ${snapshot.data} time${snapshot.data == 1 ? '' : 's'}.\n\n'
+                              'This should persist across restarts.',
+                        );
+                      }
+                  }
+                }),
+              StreamBuilder(
+                stream: myStream.counterStream,
+                  builder: (context, snapshot) => Text((snapshot.data !=null) ? snapshot.data.toString() : "0",
+              style: Theme.of(context).textTheme.headline4,
+              ))
+        ]
+          )),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
@@ -61,4 +74,19 @@ class HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
+
+class MyStream {
+  StreamController counterController = new StreamController<int>();
+  Stream get counterStream => counterController.stream;
+
+  void increment(int counter){
+    counter++;
+    counterController.sink.add(counter);
+  }
+
+  void dispose() {
+    counterController.close();
+  }
+
 }
